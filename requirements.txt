@@ -1,0 +1,12 @@
+einops
+h5py
+matplotlib
+numpy
+opencv-python
+Pillow
+scikit-learn
+torch
+torchvision
+tqdm
+umap-learn
+wandb
