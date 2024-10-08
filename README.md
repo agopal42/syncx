@@ -1,19 +1,7 @@
 # Recurrent Complex-Weighted Autoencoders for Unsupervised Object Discovery
 
-Current state-of-the-art synchrony-based models encode object bindings with
-complex-valued activations and compute with real-valued weights in feedforward
-architectures. We argue for the computational advantages of a recurrent architec-
-ture with complex-valued weights. We propose a fully convolutional autoencoder,
-SynCx, that performs iterative constraint satisfaction: at each iteration, a hidden
-layer bottleneck encodes statistically regular configurations of features in particular
-phase relationships; over iterations, local constraints propagate and the model
-converges to a globally consistent configuration of phase assignments. Binding is
-achieved simply by the matrix-vector product operation between complex-valued
-weights and activations, without the need for additional mechanisms that have
-been incorporated into current synchrony-based models. SynCx outperforms or
-is strongly competitive with current models for unsupervised object discovery.
-SynCx also avoids certain systematic grouping errors of current models, such as
-the inability to separate similarly colored objects without additional supervision. 
+Current state-of-the-art synchrony-based models encode object bindings with complex-valued activations and compute with real-valued weights in feedforward architectures. We argue for the computational advantages of a recurrent architecture with complex-valued weights. We propose a fully convolutional autoencoder, SynCx, that performs iterative constraint satisfaction: at each iteration, a hidden layer bottleneck encodes statistically regular configurations of features in particular phase relationships; over iterations, local constraints propagate and the model
+converges to a globally consistent configuration of phase assignments. Binding is achieved simply by the matrix-vector product operation between complex-valued weights and activations, without the need for additional mechanisms that have been incorporated into current synchrony-based models. SynCx outperforms or is strongly competitive with current models for unsupervised object discovery. SynCx also avoids certain systematic grouping errors of current models, such as the inability to separate similarly colored objects without additional supervision. 
 
 This repo provides a reference implementation for the Synchronous Complex Network (SynCx) model architecture introduced in the paper titled "Recurrent Complex-Weighted Autoencoders for Unsupervised Object Discovery" ([https://arxiv.org/abs/2405.17283](https://arxiv.org/abs/2405.17283)).
 
