@@ -60,19 +60,10 @@ class ComplexConv2d(nn.Module):
     def _init_phase_bias(self, phase_bias):
         return nn.init.constant_(phase_bias, val=0)
     
-    def forward(self, x, use_symmetric=False):
-        if not use_symmetric:
-            x = torch.nn.functional.conv2d(
-                x, self.conv.weight, bias=None, stride=self.stride, padding=self.padding
-            )
-            x_magnitude = x.abs() + self.magnitude_bias
-            x_phase = stable_angle(x) + self.phase_bias
-        else:
-            x = torch.nn.functional.conv2d(
-                x, torch.conj(self.conv.weight), bias=None, stride=1, padding="same"
-            )
-            x_magnitude = x.abs() + torch.conj(self.magnitude_bias)
-            x_phase = stable_angle(x) + torch.conj(self.phase_bias)
+    def forward(self, x):
+        x = self.conv(x)
+        x_magnitude = x.abs() + self.magnitude_bias
+        x_phase = stable_angle(x) + self.phase_bias
         return x_magnitude * torch.exp(x_phase * 1j)
 
 
